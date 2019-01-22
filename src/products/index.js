@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {data} from '../constants/appConstants';
 import './products.css';
 import actions from '../store/actions';
+import * as create from '../store/actionCreator';
 class Products extends Component {
 
     constructor(props) {
@@ -63,7 +64,7 @@ const dispatchToProps = (dispatch) => {
             dispatch({ type: actions.GET_ALL_PRODUCTS, info: data })
         },
         addProducts : (data)=>{
-            dispatch({ type: actions.ADD , info : data})
+            dispatch(create.add(data))
         }
     }
 }
