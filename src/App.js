@@ -8,7 +8,8 @@ import { BrowserRouter as Router,
   Route,
   Link,
   Redirect,
-  withRouter
+  withRouter,
+  Switch
  } from "react-router-dom";
 import {fakeAuth} from './utils';
 import {connect} from 'react-redux';
@@ -72,10 +73,12 @@ class App extends Component {
                 </li>
               </ul>
             </nav>
+            <Switch>
             <Route path="/" exact component={Products} />
             <Route path="/login" component={Login} />
             <PrivateRoute path='/cart' component={Cart} />
             <Redirect from="*" to="/" />
+            </Switch>
           </div>
         </Router>
       </div>

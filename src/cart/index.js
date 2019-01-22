@@ -14,8 +14,8 @@ class Cart extends Component {
             return (<div className="product-list"> Your Cart is Empty</div>)
         }
         return (
-            <div className="product-list">
-                {
+            <div >
+            <div className="product-list">                {
                     this.props.userCart.map((item) => (
                         <div key={item.id} className="card" >
                             <img src={item.logo} alt="Image Not Found" className="image" />
@@ -29,6 +29,11 @@ class Cart extends Component {
 
                 }
             </div>
+            <div className="order-row">
+                <button className="order-button"> Place Order </button >
+            </div>
+            </div>
+           
         );
     }
 }
