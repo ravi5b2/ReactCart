@@ -3,6 +3,7 @@ import { fakeAuth } from '../utils';
 import './login.css';
 import {Redirect} from "react-router-dom";
 import {connect} from 'react-redux';
+import actions from '../store/actions';
 class Login extends React.Component {
     state = { redirectToReferrer: false };
 
@@ -46,7 +47,7 @@ const mapStateToProps = (state)=>{
   const dispatchToProps = (dispatch)=>{
     return {
       switchLogin: () => {
-        dispatch({ type: 'isLoggedIn' })
+        dispatch({ type: actions.IS_LOGGED_IN })
     }
     }
   }

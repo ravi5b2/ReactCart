@@ -77,7 +77,6 @@ class App extends Component {
             <PrivateRoute path='/cart' component={Cart} />
           </div>
         </Router>
-
       </div>
     );
   }

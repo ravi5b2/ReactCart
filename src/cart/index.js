@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import actions from '../store/actions';
 class Cart extends Component {
     constructor(props){
         super(props)
@@ -9,7 +10,7 @@ class Cart extends Component {
         this.props.removeFromCart(id)
     }
     render() {
-        if (this.props.userCart.length == 0) {
+        if (this.props.userCart.length === 0) {
             return (<div className="product-list"> Your Cart is Empty</div>)
         }
         return (
@@ -44,7 +45,7 @@ const dispatchToProps = (dispatch) => {
 
     return {
         removeFromCart: (id) => {
-            dispatch({ type: 'delete', info : id})
+            dispatch({ type: actions.DELETE, info : id})
         }
     }
 }
