@@ -12,6 +12,6 @@ export const add = (val)=>{
     return dispatch =>{
         setTimeout( ()=>{
             dispatch(addAsync(val))
-        },5000)
+        },3000)
     }
 }

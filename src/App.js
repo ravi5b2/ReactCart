@@ -75,6 +75,7 @@ class App extends Component {
             <Route path="/" exact component={Products} />
             <Route path="/login" component={Login} />
             <PrivateRoute path='/cart' component={Cart} />
+            <Redirect from="*" to="/" />
           </div>
         </Router>
       </div>
